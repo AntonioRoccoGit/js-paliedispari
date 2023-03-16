@@ -3,14 +3,16 @@
  * per verificare se è palindroma
  */
 
-const userWord = prompt("Inserire una parola");
+// const userWord = prompt("Inserire una parola");
 
-if (userWord === revertWord(userWord)){
-    console.log("La tua parola è palindroma");
-}else{
-    console.log("La tua parola è normalissima");
-}
+// if (userWord === revertWord(userWord)){
+//     console.log("La tua parola è palindroma");
+// }else{
+//     console.log("La tua parola è normalissima");
+// }
 
+
+console.log(isPalindrome("ciao"));
 
 
 //////////////////////
@@ -28,4 +30,19 @@ function revertWord(wordToRevert) {
         reverseUserWord += wordToRevert[i];
     }
     return reverseUserWord;
+}
+
+/**
+ * 
+ * @param {string} word1 
+ * @returns banalmente una frase, ma potremmo volere un output booleano
+ */
+function isPalindrome(word1) {
+    let myAnswer;
+    if (word1 === revertWord(word1)){
+        myAnswer = ("La tua parola è palindroma");
+    }else{
+        myAnswer = ("La tua parola è normalissima");
+    }
+    return myAnswer;
 }
