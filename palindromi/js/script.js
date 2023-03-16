@@ -13,6 +13,7 @@
 
 
 console.log(isPalindrome("ciao"));
+console.log(isPalindrome("itopinonavevanonipoti"));
 
 
 //////////////////////
