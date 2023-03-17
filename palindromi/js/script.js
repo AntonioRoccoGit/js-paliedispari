@@ -16,6 +16,10 @@ console.log(isPalindrome("ciao"));
 console.log(isPalindrome("itopinonavevanonipoti"));
 
 
+console.log(isPalindromeUpgraded("itopinonavevanonipoti"));
+console.log(isPalindromeUpgraded("interpolazione"));
+
+
 //////////////////////
 // LE MIE FUNZIONI
 
@@ -34,16 +38,38 @@ function revertWord(wordToRevert) {
 }
 
 /**
- * 
+ * utilizzando una funzione che inverte le parole, possiamo confrontare e verificare se è palindroma
  * @param {string} word1 
- * @returns banalmente una frase, ma potremmo volere un output booleano
+ * @returns un valore booleno
  */
 function isPalindrome(word1) {
     let myAnswer;
     if (word1 === revertWord(word1)){
-        myAnswer = ("La tua parola è palindroma");
+        myAnswer = true;
     }else{
-        myAnswer = ("La tua parola è normalissima");
+        myAnswer = false;
     }
     return myAnswer;
+}
+
+/**
+ * per cercare di ottimizzare la verifica di una parola palindroma
+ * ho creato una funzione piu semplice, specializzata in questo tipo di verifica
+ * @param {string} myWord 
+ * @returns un valore booleano
+ */
+
+function isPalindromeUpgraded(myWord){
+    
+    let answer = true;
+    
+    for(let i = 0; i < myWord.length; i++){
+        
+        if(myWord[i] === myWord[myWord.length - 1 - i] && answer === true){
+            answer = true;
+        }else{
+            answer = false;
+        }
+    }
+    return answer;
 }
